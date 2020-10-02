@@ -2,7 +2,7 @@
 
 ## Description
 
-Use this app to create and delete plain-text notes. A virtual sticky pad!
+Use this app to create and delete plain-text notes. It's like a virtual sticky pad!
 
 Visit the Heroku deployment to use the app:
 [https://spacialfray-note-taker.herokuapp.com/](https://spacialfray-note-taker.herokuapp.com/)
