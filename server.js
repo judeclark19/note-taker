@@ -45,21 +45,21 @@ app.post("/api/notes", function (req, res) {
   res.json(database);
 });
 
-//Edit a note in the api
-app.put("/api/notes/:id", (req, res) => {
+//DELETE a note
+app.delete("/api/notes/:id", (req, res) => {
+  //   console.log(req.body);
   const found = database.some((note) => note.id === parseInt(req.params.id));
   if (found) {
-    const editedNoteBody = req.body;
-    database.forEach((note) => {
-      if (note.id === parseInt(req.params.id)) {
-        note.title === req.body.title;
-        note.text === req.body.text;
-      }
+    res.json({
+      message: "Note deleted.",
+      "remaining notes": database.filter(
+        (note) => note.id !== parseInt(req.params.id)
+      ),
     });
   } else {
-    res
-      .status(400)
-      .json({ error: `No note found with the ID of ${req.params.id}` });
+    res.status(400).json({
+      message: "No note with that ID was found.",
+    });
   }
 });
 
