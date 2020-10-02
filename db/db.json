@@ -1,24 +1,17 @@
 [
   {
-    "id": 1,
-    "title": "What if got was one of us",
-    "text": "just a stranger on the bus"
+    "id": "welcome",
+    "title": "Example Note",
+    "text": "To create a new note, click the pencil icon.\n\nTo save a note, click the save icon.\n\nPlease be aware that in the current version of the application, notes cannot be edited."
   },
   {
-    "id": 2,
-    "title": "I'm still standing better than I ever did",
-    "text": "looking like a true survivor"
+    "id": "test-2",
+    "title": "test note 2",
+    "text": "test note 2 body"
   },
   {
-    "id": 3,
-    "title": "Do you remember",
-    "text": "the 21st night of September"
-  },
-  { "id": 4, "title": "Im like a bird", "text": "I want to fly away" },
-  {
-    "id": 5,
-    "title": "It's getting hot in here",
-    "text": "So take off all your clothes"
-  },
-  { "id": 6, "title": "I've got sunshine", "body": "on a cloudy day" }
+    "id": "test-3",
+    "title": "test note 3",
+    "text": "test note 3 body"
+  }
 ]
