@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "welcome",
     "title": "This is an example note",
     "text": "To create a new note, click the pencil icon.\n \nTo save a note, click the save icon.\n \nPlease be aware that in the current version of this app, existing notes cannot be edited."
   }

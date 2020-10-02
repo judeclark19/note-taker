@@ -51,7 +51,7 @@ app.delete("/api/notes/:id", (req, res) => {
   if (found) {
     database = database.filter((note) => note.id !== parseInt(req.params.id));
     res.json({
-      message: `note ${req.params.id} deleted`,
+      message: `Note ${req.params.id} deleted`,
     });
   } else {
     res.status(400).json({
