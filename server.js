@@ -5,8 +5,6 @@ const path = require('path')
 const database = require("./db/db.json");
  
 
-var PORT = process.env.PORT || 8080;
-
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -18,6 +16,11 @@ app.get("/notes", function(req, res) {
 
 app.get("/api/notes", (req, res) => {
     res.json(database)
+});
+
+app.get("/api/notes/:id", (req, res) => {
+    // GET A SPECIFIC NOTE
+    res.json(database.filter(note => note.id === parseInt(req.params.id)));
 });
 
 app.post("/api/notes", function (req, res) {
@@ -33,11 +36,13 @@ app.post("/api/notes", function (req, res) {
     res.json(req.body);
   });
 
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+  });
+
+var PORT = process.env.PORT || 8080;
 
 app.listen(PORT,()=>{
     console.log(`Listening on port ${PORT}`);
 });
 
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
-  });

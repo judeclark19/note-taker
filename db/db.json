@@ -1,1 +1,14 @@
-[{"title":"What if got was one of us","body":"just a stranger on the bus"}]
+[
+  {
+    "id": 1,
+    "title": "What if got was one of us",
+    "body": "just a stranger on the bus"
+  },
+
+  {
+    "id": 2,
+    "title": "I'm still standing better than I ever did",
+    "body": "looking like a true survivor"
+  },
+  { "id": 3, "title": "Do you remember", "body": "the 21st night of September" }
+]
