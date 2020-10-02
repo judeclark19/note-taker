@@ -2,7 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const app = express();
 const path = require("path");
-const database = require("./db/db.json");
+let database = require("./db/db.json");
 const uuid = require("uuid");
 
 app.use(express.urlencoded({ extended: true }));
@@ -48,13 +48,11 @@ app.post("/api/notes", function (req, res) {
 //DELETE a note
 app.delete("/api/notes/:id", (req, res) => {
   //   console.log(req.body);
-  const found = database.some((note) => note.id === parseInt(req.params.id));
+  let found = database.some((note) => note.id === parseInt(req.params.id));
   if (found) {
+    database = database.filter((note) => note.id !== parseInt(req.params.id));
     res.json({
-      message: "Note deleted.",
-      "remaining notes": database.filter(
-        (note) => note.id !== parseInt(req.params.id)
-      ),
+      message: `note ${req.params.id} deleted`,
     });
   } else {
     res.status(400).json({
