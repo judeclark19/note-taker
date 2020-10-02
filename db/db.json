@@ -1,16 +1,16 @@
 [
   {
-    "id": 1,
+    "id": "welcome",
     "title": "Example Note",
     "text": "To create a new note, click the pencil icon.\n\nTo save a note, click the save icon.\n\nPlease be aware that in the current version of the application, notes cannot be edited."
   },
   {
-    "id": 2,
+    "id": "test-2",
     "title": "test note 2",
     "text": "test note 2 body"
   },
   {
-    "id": 3,
+    "id": "test-3",
     "title": "test note 3",
     "text": "test note 3 body"
   }

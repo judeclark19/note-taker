@@ -38,6 +38,7 @@ app.post("/api/notes", function (req, res) {
     title: req.body.title,
     text: req.body.text,
   };
+  //   console.log(typeof uuid.v4());
   if (!newNote.title) {
     res.status(400).json({ message: "Please give your note a title." });
   }
@@ -48,9 +49,10 @@ app.post("/api/notes", function (req, res) {
 //DELETE a note
 
 app.delete("/api/notes/:id", (req, res) => {
-  let found = database.some((note) => note.id === parseInt(req.params.id));
+  //   console.log(typeof req.params.id);
+  let found = database.some((note) => note.id === req.params.id);
   if (found) {
-    database = database.filter((note) => note.id !== parseInt(req.params.id));
+    database = database.filter((note) => note.id !== req.params.id);
     res.json({
       message: `Note ${req.params.id} deleted`,
     });
@@ -64,6 +66,7 @@ app.delete("/api/notes/:id", (req, res) => {
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
+
 var PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
