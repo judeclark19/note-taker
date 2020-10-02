@@ -2,13 +2,22 @@
   {
     "id": 1,
     "title": "What if got was one of us",
-    "body": "just a stranger on the bus"
+    "text": "just a stranger on the bus"
   },
-
   {
     "id": 2,
     "title": "I'm still standing better than I ever did",
-    "body": "looking like a true survivor"
+    "text": "looking like a true survivor"
   },
-  { "id": 3, "title": "Do you remember", "body": "the 21st night of September" }
+  {
+    "id": 3,
+    "title": "Do you remember",
+    "text": "the 21st night of September"
+  },
+  { "id": 4, "title": "Im like a bird", "text": "I want to fly away" },
+  {
+    "id": 5,
+    "title": "It's getting hot in here",
+    "text": "So take off all your clothes"
+  }
 ]
