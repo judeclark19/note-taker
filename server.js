@@ -3,6 +3,7 @@ const fs = require("fs");
 const app = express();
 const path = require("path");
 const database = require("./db/db.json");
+const uuid = require("uuid");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -30,27 +31,41 @@ app.get("/api/notes/:id", (req, res) => {
   }
 });
 
+//Post a new note
 app.post("/api/notes", function (req, res) {
-  database.push(req.body);
-  fs.writeFile(
-    path.join(__dirname, "./db/db.json"),
-    JSON.stringify(database),
-    function (err) {
-      if (err) throw err;
-      console.log("Successfully posted client note to database");
-    }
-  );
-  res.json(req.body);
+  const newNote = {
+    id: uuid.v4(),
+    title: req.body.title,
+    text: req.body.text,
+  };
+  if (!newNote.title) {
+    res.status(400).json({ message: "Please give your note a title." });
+  }
+  database.push(newNote);
+  res.json(database);
+});
+
+//Edit a note in the api
+app.put("/api/notes/:id", (req, res) => {
+  const found = database.some((note) => note.id === parseInt(req.params.id));
+  if (found) {
+    const editedNoteBody = req.body;
+    database.forEach((note) => {
+      if (note.id === parseInt(req.params.id)) {
+        note.title === req.body.title;
+        note.text === req.body.text;
+      }
+    });
+  } else {
+    res
+      .status(400)
+      .json({ error: `No note found with the ID of ${req.params.id}` });
+  }
 });
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
-
-// app.get("/", function (req, res) {
-//   res.sendFile(path.join(__dirname, "./public/index.html"));
-// });
-
 var PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {

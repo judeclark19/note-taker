@@ -19,5 +19,6 @@
     "id": 5,
     "title": "It's getting hot in here",
     "text": "So take off all your clothes"
-  }
+  },
+  { "id": 6, "title": "I've got sunshine", "body": "on a cloudy day" }
 ]

@@ -11,6 +11,7 @@
   "author": "Jude Clark",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "uuid": "^8.3.0"
   }
 }
